@@ -51,6 +51,10 @@ def help():
                           text5 = 'Can I cancel my account?',
                           text6 = 'Yes, you can cancel your account at anytime.')
 
+@app.route("/help_logged")    #Home page (I just put something here as a placeholder)
+def loggedhelp():
+    return render_template('faq_logged.html')
+
 @app.route("/home_logged")    #Home page (I just put something here as a placeholder)
 def loggedHome():
     return render_template('homepage_logged.html')
