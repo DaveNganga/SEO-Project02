@@ -45,6 +45,10 @@ def dashboard():
 @app.route("/help")    #Home page (I just put something here as a placeholder)
 def help():
     return render_template('faq.html')
+
+@app.route("/home_logged")    #Home page (I just put something here as a placeholder)
+def loggedHome():
+    return render_template('homepage_logged.html')
             
             
 if __name__ == '__main__':
