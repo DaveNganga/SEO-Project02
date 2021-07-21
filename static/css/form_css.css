@@ -81,7 +81,7 @@ button {
   top: 0;
   width: 900px;
   height: 100%;
-  background-image: url("cancel.jpg");
+  background-image: url("../images/cancel.jpg");
   background-size: cover;
   transition: transform 1.2s ease-in-out;
 }
