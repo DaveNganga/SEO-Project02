@@ -61,8 +61,7 @@ def register_sub():
          return redirect(url_for('home')) # if so - send to home page
       return render_template('register_sub.html', title='Register Subscription', form=form)
 
-   
-   
+      
    
 @app.route("/login")    #Home page (I just put something here as a placeholder)
 def login():
