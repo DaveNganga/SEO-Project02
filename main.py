@@ -73,8 +73,27 @@ def dashboard():
 
 @app.route("/help")    #Home page (I just put something here as a placeholder)
 def help():
-      return render_template('faq.html')
+    return render_template('faq.html', subtitle = 'FAQ', text1 = 'When will I get my remind Email?',
+                          text2 = 'You will get your remind email 24 hours befroe the next billing date.',
+                          text3 = 'How many app can I register on my account',
+                          text4 = 'You can add as many as you would like.',
+                          text5 = 'Can I cancel my account?',
+                          text6 = 'Yes, you can cancel your account at anytime.')
+
+@app.route("/help_logged")    #Home page (I just put something here as a placeholder)
+def loggedhelp():
+    return render_template('faq_logged.html', subtitle = 'FAQ', text1 = 'When will I get my remind Email?',
+                          text2 = 'You will get your remind email 24 hours befroe the next billing date.',
+                          text3 = 'How many app can I register on my account',
+                          text4 = 'You can add as many as you would like.',
+                          text5 = 'Can I cancel my account?',
+                          text6 = 'Yes, you can cancel your account at anytime.')
+
+@app.route("/home_logged")    #Home page (I just put something here as a placeholder)
+def loggedHome():
+    return render_template('homepage_logged.html')
                     
+
 if __name__ == '__main__':
       app.run(debug=True, host="0.0.0.0")
             
