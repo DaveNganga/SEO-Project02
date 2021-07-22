@@ -14,27 +14,40 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-back">
-      <a class="navbar-brand" href="/">SubsTrak</a>
+      <a class="navbar-brand" href="/home_logged">SubsTrak</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
            <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item navbar-link ">
-            <a class="nav-link" href="/#login">login/register</a>
+            <a class="nav-link" href="/home_logged">home</a>
+          </li>
+          <li class="nav-item navbar-link ">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
           </li>
          </ul>
+          <div class="nav-profile nav-profile-link ">
+            <a class="nav-link" href="/dashboard">
+                <center>
+                <svg class="nav-item-image "xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                </center>
+                username
+              </a>
+          </div>
+           <div class="nav-profile nav-profile-link ">
+            <a class="nav-link" href="/">
+                <center>
+                log Out
+                </center>
+              </a>
+          </div>
       </div>  
     </nav>
-     {% block content %}
-      <h1>{{subtitle}}</h1>
-    <h4><p>{{text1}}</p></h4>
-     <p><i>{{text2}}</i></p>
-     <h4><p>{{text3}}</p></h4>
-     <p><i>{{text4}}</i></p>
-    <h4><p>{{text5}}</p></h4>
-     <p><i>{{text6}}</i></p>
-      {% endblock %}
+     {% block content %}{% endblock %}
     <!-- Optional JavaScript still bootsrap-->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -58,4 +71,3 @@
         </center>        
     </footer>
 </html>
->>>>>>> 21af0dd54d947d86bc2c9038091aaa1a9ee6d070

@@ -36,6 +36,7 @@ class UserSubscription(db.Model):
 def home():
       return render_template('homepage.html')
 
+ 
 @app.route("/register_account", methods = ['GET', 'POST']) #the register page 
 def register_account():
       form = RegistrationForm()
