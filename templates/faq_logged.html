@@ -47,7 +47,15 @@
           </div>
       </div>  
     </nav>
-     {% block content %}{% endblock %}
+         {% block content %}
+      <h1>{{subtitle}}</h1>
+    <h4><p>{{text1}}</p></h4>
+     <p><i>{{text2}}</i></p>
+     <h4><p>{{text3}}</p></h4>
+     <p><i>{{text4}}</i></p>
+    <h4><p>{{text5}}</p></h4>
+     <p><i>{{text6}}</i></p>
+      {% endblock %}
     <!-- Optional JavaScript still bootsrap-->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
