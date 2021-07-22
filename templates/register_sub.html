@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Enter your Subcription</h1>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{ form.billing_cycle.label(class="form-control-label") }}
+                    {% if form.billing_cycle.errors %}
+                        {{ form.billing_cycle(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.billing_cycle.errors%}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.billing_cycle(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                     <div class="form-group">
+                     {{ form.cost.label(class="form-control-label") }}
+                     {% if form.cost.errors %}
+                       {{ form.cost(class="form-control form-control-lg is-invalid") }}
+                       <div class="invalid-feedback">
+                         {% for error in form.cost.errors%}
+                             <span>{{error}}</span>
+                         {% endfor %}
+                       </div>
+                   {% else %}
+                       {{ form.cost(class="form-control form-control-lg") }}
+                   {% endif %}
+                 </div>
+                 <div class="form-group">
+                     {{ form.name_of_subscription.label(class="form-control-label") }}
+                     {% if form.name_of_subscription.errors %}
+                       {{ form.name_of_subscription(class="form-control form-control-lg is-invalid") }}
+                       <div class="invalid-feedback">
+                         {% for error in form.name_of_subscription.errors%}
+                             <span>{{error}}</span>
+                         {% endfor %}
+                       </div>
+                   {% else %}
+                       {{ form.name_of_subscription(class="form-control form-control-lg") }}
+                   {% endif %}
+                 </div>
+                  <div class="form-group">
+                     {{ form.email.label(class="form-control-label") }}
+                     {% if form.email.errors %}
+                       {{ form.email(class="form-control form-control-lg is-invalid") }}
+                       <div class="invalid-feedback">
+                         {% for error in form.email.errors%}
+                             <span>{{error}}</span>
+                         {% endfor %}
+                       </div>
+                   {% else %}
+                       {{ form.email(class="form-control form-control-lg") }}
+                   {% endif %}
+                 </div>
+                 <div class="form-group">
+                     {{ form.submit(class="btn btn-outline-info") }}
+                 </div>              
+            </fieldset>
+        </form>
+    </div>
+{% endblock content %}

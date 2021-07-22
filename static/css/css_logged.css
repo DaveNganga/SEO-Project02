@@ -59,10 +59,17 @@ h1, h2, h3, h4, h5, h6 {
    color: #cbd5db;
 }
 .nav-link{
-      color: #c3b299;
+   color: #c3b299;
+}
+.nav-link_logged{
+    color: #c3b299;
 }
 .nav-link:hover{
-      color: #2C514C;
+    color: #2C514C;
+}
+.nav-link_logged:hover{
+    color: white;
+    text-decoration:none;
 }
 .right{
     margin-left: auto;
