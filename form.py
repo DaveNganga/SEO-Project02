@@ -8,3 +8,15 @@ class InputForm(FlaskForm):
     name_of_subscription = StringField('Name of Subscription', validators = [DataRequired()])
     email = StringField('Email', validators = [DataRequired(), Email()])
     submit = SubmitField('Remind Me!')
+      
+      
+
+class RegistrationForm(FlaskForm):
+      username = StringField('Username', 
+                             validators=[DataRequired(), Length(min=2, max=20)])
+      email = StringField('Email',
+                         validators=[DataRequired(), Email()])
+      password = PasswordField('Password', validators=[DataRequired()])
+      confirm_password = PasswordField('Confirm Password',
+                                      validators=[DataRequired(), EqualTo('password')])
+      submit = SubmitField('Sign up')
