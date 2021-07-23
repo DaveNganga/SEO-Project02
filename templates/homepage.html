@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/form_css.css') }}">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'><link rel="stylesheet" href="./style.css">
     <title>SubsTrak!</title>
-  </head>
-  <body>
+  </head>  
+  <body> 
    <img class="header-image" src ="/static/images/Homepage_Puzzle.jpg"/>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-back">
       <a class="navbar-brand" href="/">SubsTrak</a>
@@ -80,24 +80,78 @@
               </div>
             </div>
             <div class="form sign-up" id="register">
+             <form method="POST" action="">
+               {{ form.hidden_tag() }}
+              <fieldset class="form-group">
               <h2 style="Color:#c3b299">Join the family</h2>
+                 {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                          {% for category, message in messages %}
+                             <div class="alert alert-{{ category }}">
+                               <center style="color:#523249; font-weight:bold;">{{ message }}</center>
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+                      {% endwith %}
                <label>
-                <span>Name</span>
-                <input type="text" />
+                <span>{{ form.username.label }}</span>
+                {% if form.username.errors %}
+                   <input type="text"/>
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                 {% else %}
+                     <input type="text"/>
+                 {% endif %}
               </label>
+                 
+               <label>
+                <span>{{ form.email.label }}</span>
+                 {% if form.email.errors %}
+                    <input type="email"/>
+                     <div class="invalid-feedback">
+                         {% for error in form.email.errors%}
+                            <span>{{error}}</span>
+                         {% endfor %}
+                      </div>
+                 {% else %}
+                     <input type="email"/>
+                 {% endif %}
+              </label>
+                 
               <label>
-                <span>Email</span>
-                <input type="email" />
-              </label>
+                <span>{{form.password.label}}</span>
+                 {% if form.password.errors %}
+                <input type="password"/>
+                    <div class="invalid-feedback">
+                         {% for error in form.password.errors%}
+                             <span>{{error}}</span>
+                         {% endfor %}
+                       </div>
+                   {% else %}
+                       <input type="password"/>
+                   {% endif %}              
+               </label>
+                 
               <label>
-                <span>Password</span>
-                <input type="password" />
-              </label>
-              <label>
-                <span>Confirm Password</span>
-                <input type="password" />
-              </label>
-              <button type="button" class="submit">Sign Up</button>
+                <span>{{form.confirm_password.label}}</span>
+                 {% if form.confirm_password.errors %}
+                <input type="password"/>
+                    <div class="invalid-feedback">
+                         {% for error in form.confirm_password.errors%}
+                             <span>{{error}}</span>
+                         {% endfor %}
+                       </div>
+                   {% else %}
+                       <input type="password"/>
+                   {% endif %}              
+               </label>
+                 
+              <button type="button" class="submit">{{ form.submit }}</button>
+                 </fieldset>
+              </form>
             </div>
           </div>
         </div>
